@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ICON College Computing Department</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"> 
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">ICON</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="about.html">ABOUT</a></li>
+        <li><a href="course.html">COURSES</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="about" class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>About ICON</h2><br>
+      <h4>Icon college computing is aimed to provide computing knowledge to the students who want to develop strong professional capabilities in development and programming of digital artifacts.</h4><br>
+      <p>We offer a broad range of academic courses leading to internationally recognized in computing and system development.  You will develop strong technical skills in the areas of web design, mobile application, web development and many more. Study within a highly and specialized supportive college environment providing you with a modernized transition to further studies at icon college.</p>
+
+    </div>
+    
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center" style="background-color: #5c2f8c;">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p style="color:#fff;">ICON College of Computing.©2018</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+     var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+         window.location.hash = hash;
+      });
+    } 
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
